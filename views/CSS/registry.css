@@ -1,0 +1,116 @@
+
+:root{
+    --morado-banner: #340c8b;
+    --morado-fondo: #2f2751;
+    --amarillo: #e0ca00;
+}
+body {
+    font-family: Eina02, sans-serif;
+    color: #000000;
+    background-color: var(--morado-fondo);
+    font-size: 14px;
+    line-height: 20px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    height:max-content;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 95%;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 calc(50%);
+}
+
+.login img{
+    padding-bottom: 10px;
+}
+
+.info-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+
+}
+
+.info-button p{
+    margin-top: 5px;
+}
+
+.login label{
+    font-weight: bold;
+
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-bottom: 20px;
+}
+
+.formulario .txt{
+    width: 400px;
+    height: 30px;
+}
+
+.btn-registry{
+    
+    border-radius: 15px;
+    height: 30px;
+    width: 380px;
+    border-color: var(--amarillo);
+    background-color: var(--amarillo);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--morado-fondo);
+    border: none;
+    transition: background-color .3s ease-in-out;
+    margin-left: 10px;
+
+}
+
+.btn-registry:hover{
+    background-color: var(--morado-banner);
+    color: #fff;
+    border-color: var(--amarillo);
+}
+
+.Log p{
+    font-weight: bold;
+    color: rgb(175, 175, 175);
+
+}
+
+.Log p a{
+    color: #000000;
+}
+
+.Log p a:hover{
+    color: var(--morado-banner);
+}
+
+.imagen{
+
+    flex: 0 0 calc(50%);
+    display: flex;
+}
+
+.imagen img{
+    background-position: center center;
+    background-size: cover;
+    width: 600px;
+}
