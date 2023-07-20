@@ -113,6 +113,8 @@ body {
     background-color: var(--morado-banner);
     color: #fff;
     border-color: var(--amarillo);
+    transition: background-color .3s ease-in-out;
+
 }
 
 .singUp p{
