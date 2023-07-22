@@ -4,6 +4,8 @@ body {
     background-color: #e9e9e9;
     font-size: 14px;
     line-height: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 :root{
@@ -127,7 +129,7 @@ ul{
     border-radius: 10px;
     box-shadow: 5px 5px 5px gray;
     padding-right: 15px;
-    height: 350px;
+    height: 390px;
 }
 .categorias-disponibles h2{
     padding-left: 10px;
@@ -155,19 +157,23 @@ ul{
 
 .productos{
     background-color: #fff;
-    height: 1000px;
+    height: 100%;
     width: 160vh;
     border-radius: 10px;
     box-shadow: 5px 5px 15px gray;
+    flex-flow:wrap ;
+    padding-bottom: 2%;
 
 }
 
 .cards{
     display: flex;
     justify-content: start;
-    margin-right: 30px;
     flex-direction: row;
-    flex-flow:wrap ;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+   
    
 }
 
@@ -233,6 +239,10 @@ ul{
     color: #fff;
     transition: background-color .3s ease-in-out;
 
+}
+
+.description p{
+    width: 300px;
 }
 
 .ranking{
