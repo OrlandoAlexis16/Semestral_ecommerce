@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/register.css">
+  <title>MCE</title>
+</head>
+<body>
+  <div class="container">
+    <div class="login">
+      <img src="../img/logo.png" alt="" style="height: 200px; width: 200px;">
+      <form method="POST" action="/register">
+        <div class="formulario">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <label for="repeat">Repeat password</label>
+          <input type="password" id="repeat" required>
+        </div>
+        <button type="submit" class="btn-registry">Register</button>
+      </form>
+      <div class="Log">
+        <p>You have an account? <a href="/login">Login</a></p>
+      </div>
+    </div>
+    <div class="imagen">
+      <img src="../img/Imagen de registro.png" alt="">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="card-deals">
+  <div class="back-image">
+    <a href="/product/<%= product.id %>"><img class="product-image" src="<%= product.image %>" alt="Product image"></a>
+  </div>
+  <div class="name-price">
+    <a href="/product/<%= product.id %>">
+      <p class="texto" id=""><%= product.name %></p>
+    </a>
+    <p class="texto" id="">$<%= product.price %></p>
+  </div>
+  <div class="description">
+    <p><%= product.description %></p>
+  </div>
+  <div class="ranking">
+    <i class="fa-solid fa-star" style="color:#00a62e"></i>
+    <i class="fa-solid fa-star" style="color:#00a62e"></i>
+    <i class="fa-solid fa-star" style="color:#00a62e"></i>
+    <i class="fa-solid fa-star" style="color:#00a62e"></i>
+    <i class="fa-solid fa-star" style="color:#00a62e"></i>
+  </div>
+  <button>Add to cart</button>
+</div>

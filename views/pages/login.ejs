@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/login.css">
+  <title>MCE</title>
+</head>
+<body>
+  <div class="container">
+    <div class="login">
+      <img src="../img/logo.png" alt="" style="height: 200px; width: 200px;">
+      <button class="btn-google">
+        <div class="info-button">
+          <img src="../img/google logo.png" style="height: 35px; width: 35px;" alt="">
+          <p>Login with Google</p>
+        </div>
+      </button>
+      <h3>- OR LOGIN WITH EMAIL -</h3>
+      <form method="POST" action="/login">
+        <div class="formulario">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <div class="recuperar">
+            <div>
+              <input type="checkbox"> Stay connected
+            </div>
+            <a href="#"> I forgot my password</a>
+          </div>
+        </div>
+        <button class="btn-login" type="submit">LOGIN</button>
+      </form>
+      <div class="singUp">
+        <p>Don't have account? <a href="/register">sing up</a></p>
+      </div>
+    </div>
+    <div class="imagen">
+      <img src="../img/Imagen de Login.png" alt="">
+    </div>
+  </div>
+</body>
+</html>

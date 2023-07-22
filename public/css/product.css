@@ -1,0 +1,167 @@
+body {
+  font-family: Eina02, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --morado-banner: #340c8b;
+  --morado-fondo: #2f2751;
+  --amarillo: #e0ca00;
+  --morado-claro: #5202ff;
+}
+
+.container {
+  display: flex;
+  padding: 40px;
+  height: auto;
+
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  height: 40%;
+  width: 40%;
+  padding-right: 60px;
+}
+
+.product-image {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.image img {
+  height: 900px;
+  width: 900px;
+}
+
+.ranking {
+  padding-bottom: 20px;
+}
+
+.info {
+  height: 60%;
+  width: 60%;
+
+}
+
+.info .add {
+  border-radius: 25px;
+  width: 120px;
+  height: 50px;
+  border-color: #000000;
+  background-color: #fff;
+  font-size: 14px;
+  transition: background-color .3s ease-in-out;
+
+}
+
+.buy {
+  background-color: #008125;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  width: 120px;
+  height: 50px;
+  font-size: 14px;
+  transition: background-color .3s ease-in-out;
+
+}
+
+.info .buy:hover {
+  background-color: #004915;
+  border-color: #004915;
+  color: #fff;
+  transition: background-color .3s ease-in-out;
+
+}
+
+.info .add:hover {
+  background-color: #004915;
+  border-color: #004915;
+  color: #fff;
+  transition: background-color .3s ease-in-out;
+
+}
+
+.Characteristic {
+  width: 50%;
+  padding-top: 5%;
+
+}
+
+.pie-pagina {
+  width: 100%;
+  background-color: #ffffff;
+
+}
+
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+  width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #030303;
+  margin-right: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+  color: var(--morado-banner)
+}
+
+.pie-pagina .grupo-2 {
+  background-color: #f1f2fa;
+  padding: 15px 10px;
+  text-align: center;
+  color: #000000;
+}
+
+.pie-pagina .grupo-2 small {
+  font-size: 15px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+  font-size: 20px;
+}
