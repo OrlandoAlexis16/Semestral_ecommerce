@@ -1,3 +1,7 @@
+.mr {
+  margin-right: 0.5rem;
+}
+
 .call{
   display: flex;
   justify-content: spaceggf-between;

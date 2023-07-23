@@ -18,5 +18,7 @@
     <i class="fa-solid fa-star" style="color:#00a62e"></i>
     <i class="fa-solid fa-star" style="color:#00a62e"></i>
   </div>
-  <button>Add to cart</button>
+  <form method="POST" action="/product/<%= product.id %>">
+    <button class="cart" type="submit">Add to cart</button>
+  </form>
 </div>

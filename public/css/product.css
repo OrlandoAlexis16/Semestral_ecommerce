@@ -44,6 +44,10 @@ body {
   padding-bottom: 20px;
 }
 
+form {
+  display: inline-block;
+}
+
 .info {
   height: 60%;
   width: 60%;
@@ -59,6 +63,10 @@ body {
   font-size: 14px;
   transition: background-color .3s ease-in-out;
 
+}
+
+.add:hover {
+  cursor: pointer;
 }
 
 .buy {
@@ -78,7 +86,7 @@ body {
   border-color: #004915;
   color: #fff;
   transition: background-color .3s ease-in-out;
-
+  cursor: pointer;
 }
 
 .info .add:hover {

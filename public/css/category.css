@@ -94,6 +94,10 @@ body {
   max-height: 250px;
 }
 
+.cart:hover {
+  cursor: pointer;
+}
+
 .card-deals {
   display: flex;
   flex-direction: column;

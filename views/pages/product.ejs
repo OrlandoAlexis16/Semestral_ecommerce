@@ -30,7 +30,9 @@
           <h1>Price</h1>
           <h1 class="price" id="price">$<%= product.price %></h3>
         </div>
-        <button class="add">Add to Cart</button>
+        <form method="POST" action="/product/<%= product.id %>">
+          <button class="add cart" type="submit">Add to cart</button>
+        </form>
         <button class="buy">Buy Now</button>
         <div class="Characteristic">
           <h2>Description</h2>

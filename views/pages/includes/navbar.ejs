@@ -5,7 +5,7 @@
           </li>
           <div>
             <a href="#">
-              <li class="lista"><a href="/categories">Categories</a><i class="fa-solid fa-angle-down"></i>
+              <li class="lista"><a class="mr" href="/categories">Categories</a><i class="fa-solid fa-angle-down"></i>
                 <ul class="menu-desplegable">
                   <li><a href="#">Furniture</a></li>
                   <li><a href="#">Clothes</a></li>
@@ -17,17 +17,29 @@
             </a>
           </div>
         </div>
-        <div class="search">
-          <input type="text" placeholder="Search Product">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
         <div class="section-2">
-          <div>
-            <li class="lista"><i class="fa-regular fa-user"></i></i><a href="/login">Account</a></li>
+          <% if (locals.session) { %>
+          <div>   
+            <li class="lista mr"><%= session.username %></li>
           </div>
           <div>
-            <li class="lista"><i class="fa-solid fa-cart-plus"></i><a href="/cart">Cart</a></li>
+            <a href="/cart">
+              <li class="lista"><a class="mr" href="/cart">Cart</a><i class="fa-solid fa-cart-shopping"></i></li>
+            </a>
           </div>
+          <div>
+            <a href="/logout">
+              <li class="lista"><a class="mr" href="/logout">Logout</a><i class="fa-solid fa-right-to-bracket"></i></li>
+            </a>
+          </div>
+          <% } else { %>
+          <div>
+            <li class="lista"><a class="mr" href="/login">Iniciar sesión</a><i class="fa-solid fa-right-to-bracket"></i></li>
+          </div>
+          <div>
+            <li class="lista"><a class="mr" href="/cart">Registrarse</a><i class="fa-solid fa-plus"></i></li>
+          </div>
+          <% } %>
         </div>
       </div>
     </header>

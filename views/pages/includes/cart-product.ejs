@@ -1,0 +1,11 @@
+<div class="product">
+  <img class="product-img" src="<%= product.image %>" alt="">
+  <div class="product-info">
+    <h2 class="product-name"><%= product.name %></h2>
+    <h3 class="product-price">$<%= product.price %></h3>
+    <p class="product-desc"><%= product.description %></p>
+  </div>
+  <form method="POST" action="/cart/<%= product.cart_item_id %>">
+    <button type="submit"><i class="fa-solid fa-trash fa-lg" style="color: #ff0000;"></i></button>
+  </form>
+</div>
