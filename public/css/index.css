@@ -6,6 +6,8 @@ body {
     line-height: 20px;  
     margin: 0;
     padding: 0;
+    width: auto;
+    height: auto;
 
 }
 
@@ -184,10 +186,18 @@ ul{
     justify-content: center;
 }
 
-.titulo-category{
+.select-Category{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.select-Category h1 {
     margin-left: 120px;
     font-size: 27px;
-    position: relative;
+    position: absolute;
+    top: -90px;
 }
 
 .Category-opcion{
@@ -203,6 +213,11 @@ ul{
 
 .Category{
     padding-left: 30px;
+    position: relative;
+}
+
+.Category:hover img{
+    -webkit-transform:scale(1.1);transform:scale(1.1);    
 }
 
 .Category h3{
@@ -212,6 +227,8 @@ ul{
     font-weight: 600;
     bottom: -145px;
     margin-left: 45px;
+    height: 20px;
+    top: 5px;
 }
 .Deals h1{
     margin-left: 120px;
