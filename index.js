@@ -39,17 +39,25 @@ app.get('/login', async (req, res) => {
   if (req.session) {
     res.redirect('/');
   } else {
-    res.render('pages/login');
+    if (req.query.confirmEmail) {
+      res.render('pages/login', { confirmEmail: true });
+    } else {
+      res.render('pages/login');
+    }
   }
 });
 
 app.post('/login', async (req, res) => {
-  let { data: signInData, err } = await client.auth.signInWithPassword({
+  let { data: signInData, error } = await client.auth.signInWithPassword({
     email: req.body.email,
     password: req.body.password,
   });
-
-  res.redirect('/');
+  
+  if (error) {
+    res.render('pages/login', { error });
+  } else {
+    res.redirect('/');
+  }
 });
 
 app.get('/logout', async (req, res) => {
@@ -73,8 +81,12 @@ app.post('/register', async (req, res) => {
       }
     }
   );
-  console.log(data);
-  res.render('pages/login');
+  if (error) {
+    console.log(error);
+    res.render('pages/register', { error });
+  } else {
+    res.redirect('/login?confirmEmail=true');
+  }
 });
 
 app.get('/categories', async (req, res) => {
@@ -165,6 +177,7 @@ app.post('/checkout', async (req, res) => {
         return result + item.price;
       }, 0).toFixed(2);
       const order = await paypal.createOrder(total);
+      console.log(order);
       res.redirect(order.links.find(link => link.rel === 'approve').href);
     } else {
       res.redirect('/cart');
@@ -173,6 +186,26 @@ app.post('/checkout', async (req, res) => {
     res.redirect('/login');
   }
 });
+
+app.get('/finalizepayment', async (req, res) => {
+  // remove items from cart
+  if (req.session) {
+    let completeOrder = await paypal.completeOrder(req.query.token);
+    res.redirect('/checkout');
+  } else {
+    res.redirect('/login');
+  }
+});
+
+app.get('/checkout', async (req, res) => {
+  if (req.session) {
+    const { error } = await client.from('cart-item').delete().eq('user_id', req.session.user.id);
+    res.render('pages/checkout');
+  } else {
+    res.redirect('/login');
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);

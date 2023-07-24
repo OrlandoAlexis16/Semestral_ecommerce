@@ -1,4 +1,4 @@
-const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, ENVIRONMENT = 'sandbox' } = process.env;
+const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, ENVIRONMENT = 'production' } = process.env;
 const baseUrl = {
   sandbox: "https://api-m.sandbox.paypal.com",
   production: "https://api-m.paypal.com",
@@ -6,12 +6,6 @@ const baseUrl = {
 
 // use the oauth2/token api to get an access token
 function getPaypalAccessToken() {
-  console.log({ 
-    PAYPAL_CLIENT_ID,
-    PAYPAL_CLIENT_SECRET,
-    ENVIRONMENT,
-    baseUrl: baseUrl[ENVIRONMENT],
-   })
   return fetch(`${baseUrl[ENVIRONMENT]}/v1/oauth2/token`, {
     method: "POST",
     headers: {
@@ -56,6 +50,30 @@ async function createOrder(value) {
   .then((response) => response.json());
 }
 
+async function completeOrder(orderId) {
+  const accessToken = await getPaypalAccessToken();
+  return fetch (`${baseUrl[ENVIRONMENT]}/v2/checkout/orders/${orderId}/capture`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+  .then((response) => response.json());
+}
+
+async function getOrder(token) {
+  const accessToken = await getPaypalAccessToken();
+  return fetch(`${baseUrl[ENVIRONMENT]}/v2/checkout/orders/${token}`, {
+    method: "GET",
+    headers: {
+      'Authorization': `Bearer ${accessToken}`,
+    }
+  })
+  .then((response) => response.json());
+}
+  
+
 module.exports = {
-  createOrder,
+  createOrder, completeOrder, getOrder
 };

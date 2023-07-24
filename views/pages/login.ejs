@@ -10,6 +10,12 @@
   <div class="container">
     <div class="login">
       <img src="../img/logo.png" alt="" style="height: 200px; width: 200px;">
+      <% if (locals.confirmEmail) { %>
+      <p class="confirm">The account was successfully created. Please verify your account by clicking on the confirm link that was sent to your email.</p> 
+      <% } %>
+      <% if (locals.error) { %>
+      <p class="error">Invalid username or password. Please try again.</p> 
+      <% } %>
       <form method="POST" action="/login">
         <div class="formulario">
           <label for="email">Email</label>

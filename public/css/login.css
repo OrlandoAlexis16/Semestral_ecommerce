@@ -17,6 +17,14 @@ body {
     
 }
 
+.confirm {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
 .container{
     display: flex;
     justify-content: center;
