@@ -90,7 +90,7 @@ body {
     padding-bottom: 20px;
 }
 
-.formulario input{
+.formulario .txt{
     width: 400px;
     height: 30px;
 }
