@@ -47,6 +47,10 @@ async function createOrder(value) {
         }
       ],
       "intent": "CAPTURE",
+      "application_context": {
+        "return_url": "http://localhost:3000/finalizepayment",
+        "cancel_url": "http://localhost:3000/cart"
+      }
     })
   })
   .then((response) => response.json());

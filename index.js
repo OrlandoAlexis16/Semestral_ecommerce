@@ -145,8 +145,30 @@ app.post('/cart/:id', async (req, res) => {
 
 app.post('/checkout', async (req, res) => {
   if (req.session) {
-    const order = await paypal.createOrder(200);
-    res.json(order);
+    const { data: cartItems, error } = await client.from('cart-item').select('id, product_id').eq('user_id', req.session.user.id);
+    let products = null;
+    let total = 0;
+    if (cartItems.length > 0) {
+      const productIds = cartItems.map(item => item.product_id);
+      const { data: productItems, productError } = await client.from('product').select('*').in('id', productIds);
+
+      const productItemDict = productItems.reduce((result, item) => {
+        const { id, ...rest } = item;
+        result[id] = rest;
+        return result;
+      }, {});
+      
+      products = cartItems.map(item => {
+        return {cart_item_id: item.id, product_id: item.product_id, ...productItemDict[item.product_id]} 
+      });
+      total = products.reduce((result, item) => {
+        return result + item.price;
+      }, 0).toFixed(2);
+      const order = await paypal.createOrder(total);
+      res.redirect(order.links.find(link => link.rel === 'approve').href);
+    } else {
+      res.redirect('/cart');
+    }
   } else {
     res.redirect('/login');
   }
