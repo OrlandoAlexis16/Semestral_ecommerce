@@ -42,8 +42,8 @@ async function createOrder(value) {
       ],
       "intent": "CAPTURE",
       "application_context": {
-        "return_url": "http://localhost:3000/finalizepayment",
-        "cancel_url": "http://localhost:3000/cart"
+        "return_url": "http://129.153.167.112/finalizepayment",
+        "cancel_url": "http://129.153.167.112/cart"
       }
     })
   })
